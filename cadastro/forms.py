@@ -1,6 +1,7 @@
 from django import forms 
-
+from cadastro.models import Cadastro
 class CadastroForm(forms.Form):
-    nome = forms.CharField()
-    email = forms.EmailField()
-    senha = forms.CharField(widget=forms.PasswordInput)
+    class Meta:
+        model = Cadastro
+        fields = ['nome', 'email', 'senha']
+        

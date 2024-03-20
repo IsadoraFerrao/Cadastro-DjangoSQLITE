@@ -17,28 +17,3 @@
     </form>
   {% endif %}
 {% endblock %}
-
-
-<!--
-{% extends "inicio.html" %}  {# Estende o modelo "inicio.html" #}
-{% load bootstrap5 %}       {# Carrega as tags do Bootstrap 5 para serem usadas neste template #}
-{% block principal %}        {# Início do bloco principal #}
-
-  <h1 class="text-body-emphasis">Cadastro de usuários</h1>  {# Define o título "Cadastro de usuários" #}
-  <p>         {# Abre um parágrafo #}
-        Cadastre-se    {# Exibe o texto "Cadastre-se" #}
-  </p>        {# Fecha o parágrafo #}
-  {% if sucesso %}      {# Início do bloco condicional "if sucesso" #}
-    <p class="alert alert-success"> Cadastro realizado com sucesso </p>   {# Exibe uma mensagem de sucesso de cadastro #}
-  {% else %}         {# Else do bloco condicional #}
-
-    <form action="" method="POST" id="form" novalidate>      {# Abre um formulário #}
-        {% csrf_token %}       {# Adiciona um token CSRF ao formulário #}
-        {% bootstrap_form form %}      {# Renderiza o formulário usando o Bootstrap #}
-        <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>  {# Cria um botão de cadastro #}
-    </form>        {# Fecha o formulário #}
-    
-  {% endif %}       {# Fim do bloco condicional #}
-{% endblock %}      {# Fim do bloco principal #}
-
--->
