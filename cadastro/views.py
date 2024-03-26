@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse 
 from cadastro.forms import CadastroForm
 from cadastro.models import Cadastro
@@ -8,13 +8,12 @@ def inicio(request):
 
 def cadastro(request):
     sucesso = False 
-    if request.method == 'GET':
-        form = CadastroForm()
-    else:
-        form = CadastroForm(request.POST)
-        if form.is_valid(): 
-            sucesso = True
-            form.save()            
+    #if request.method == 'GET':
+    form = CadastroForm(request.POST or None)
+    if form.is_valid(): 
+        sucesso = True
+        form.save()
+        return render(request, 'cadastro_logado.html', {'usuarios': Cadastro.objects.all()})
     contexto = {
         'form': form,
         'sucesso': sucesso

@@ -1,11 +1,13 @@
 {% extends "inicio.html" %}
 {% load bootstrap5 %}
 {% block principal %}
+{% load static %}
 
   <h1 class="text-body-emphasis">Cadastro de usuários</h1>
-  <p>
-    Cadastre-se 
-  </p>
+  <br>
+  <div class="text-center">
+    <img src="{% static 'imagens/womakerscode.png'%}" alt="Logo Womakers" class="img-fluid">
+  </div>
   
   {% if sucesso %}
     <p class="alert alert-success"> Cadastro realizado com sucesso </p>

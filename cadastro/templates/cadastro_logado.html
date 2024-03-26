@@ -1,0 +1,29 @@
+{% extends "inicio.html" %}
+{% load bootstrap5 %}
+{% block principal %}
+{% load static %}
+
+<h1 class="text-body-emphasis">Usuários Cadastrados</h1>
+<br>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <!-- Adicione outras colunas conforme necessário -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for usuario in usuarios %}
+      <tr>
+        <td>{{ usuario.nome }}</td>
+        <td>{{ usuario.email }}</td>
+        <!-- Adicione outras colunas conforme necessário -->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
